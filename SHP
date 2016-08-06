@@ -1,34 +1,40 @@
+#SHP, python 2.7, version 1
+
+#Function for bigHeader
+
 def bigHeader():
-  x = 0
-  print('Enter header text:')
-  x = input()
+  x = raw_input('Enter header text: ')
   y = (len(x) + 6) #Lines of "#" meant to be over and under header-text.
   z = '#'
   
   print('\n' + '\n') #Just some space.
   
   print(z * y + '\n' + z + (' ' * (y-2)) + z) #Upper line and following line
-  print('#  ' + x + '  \#') #Text/header.
+  print('#  ' + x + '  #') #Text/header.
   print(z + (' ' * (y-2)) + z + '\n' + z * y) #Two # and the following lower line.
   
+
+#Function for header()
+
 def header(): #Does less than bigHeader, only 3 lines instead of 5.
-  x = 0
-  print('Enter header text:')
-  x = input()
+  x = raw_input('Enter header text: ')
   y = (len(x) + 6) #Lines of "#" meant to be over and under header-text.
   z = '#'
   
   print('\n' + '\n') #Just some space.
   
   print(z * y) #Upper line 
-  print('#  ' + x + '  \#') #Text/header.
+  print('#  ' + x + '  #') #Text/header.
   print(z * y) #Lower line.
+
+
+#Function for welcome message
 
 def shortSHP(): #Welcome message, and lets you choose between header and bigHeader
   b = 0
   print('Welcome to the "Simple Header Printer" (SHP).')
-  print('What kind of header? \nBig (b) or default (d)?')
-  b = input()
+  #print('What kind of header? \nBig (b) or default (d)?')
+  b = raw_input('What kind of header? \nBig (b) or default (d)? ')
   if b == 'b':
     bigHeader()
   elif b == 'd':
@@ -38,10 +44,9 @@ def shortSHP(): #Welcome message, and lets you choose between header and bigHead
     b = input()
   repeatFunc()
 
+#Function for repeating the process.
 def repeatFunc(): #Askes if you want to create more.
-  print(('\n' * 2) + 'Go again? (y/n)')
-  a = 0
-  a = input()
+  a = raw_input(('\n' * 2) + 'Go again? (y/n) ')
   if a == 'y':
     shortSHP()
   elif a == 'n':
