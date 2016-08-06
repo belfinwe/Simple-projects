@@ -7,8 +7,8 @@ def bigHeader():
   
   print('\n' + '\n') #Just some space.
   
-  print(z * y + '\n' + z ' (' ' * (y-2)) + z) #Upper line and following line
-  print('#  ' + x + '  #') #Text/header.
+  print(z * y + '\n' + z + (' ' * (y-2)) + z) #Upper line and following line
+  print('#  ' + x + '  \#') #Text/header.
   print(z + (' ' * (y-2)) + z + '\n' + z * y) #Two # and the following lower line.
   
 def header(): #Does less than bigHeader, only 3 lines instead of 5.
@@ -21,10 +21,10 @@ def header(): #Does less than bigHeader, only 3 lines instead of 5.
   print('\n' + '\n') #Just some space.
   
   print(z * y) #Upper line 
-  print('#  ' + x + '  #') #Text/header.
+  print('#  ' + x + '  \#') #Text/header.
   print(z * y) #Lower line.
 
-def short_SHP(): #Welcome message, and lets you choose between header() and bigHeader()
+def shortSHP(): #Welcome message, and lets you choose between header and bigHeader
   b = 0
   print('Welcome to the "Simple Header Printer" (SHP).')
   print('What kind of header? \nBig (b) or default (d)?')
@@ -43,9 +43,9 @@ def repeatFunc(): #Askes if you want to create more.
   a = 0
   a = input()
   if a == 'y':
-    short_SHP():
+    shortSHP()
   elif a == 'n':
     print('Bye.')
 
 
-short_SHP() #Starts the short-SHP()-function.
+shortSHP() #Starts the short-SHP()-function.
