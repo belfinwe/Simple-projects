@@ -1,0 +1,31 @@
+# 1. Les inn et binært tall (0 eller 1)
+# 2. Gjør det tallet klart for konvertering (lag liste, ittere/ta det imot som str())
+# 3. Enten begynne i enden av listen/eller telle eksponenten nedover/dele på 2.
+
+def bin_dec():
+    bin_nr = input('Enter binary number: ')
+
+    for x in bin_nr:
+        if x != '1': #Skal sjekke om tallet består av 1 og 0.
+            if x != '0':
+                print('Please enter a binary number (just "1" and/or "0").\n')
+                bin_dec() #Funksjonen blir kjørt fra begynnelsen dersom tallet innholder annet enn '1' og '0'.
+
+    bin_nr_len = len(bin_nr) - 1 #Off by one, dersom det bare er et tall skal det være 0 som er eksponenten, ikke en.
+    eksponent = 2 ** bin_nr_len
+    dec_nr = 0 #Skal inneholde bin_nr i desimal når programmet er ferdig.
+
+    for y in bin_nr:
+        dec_nr += (int(y) * eksponent) #y går igjennom bin_nr, og det talles ganges med variablen eksponent.
+        bin_nr_len -= 1 #Sørger for å redusere eksponenten
+        eksponent = 2 ** bin_nr_len #Oppdaterer eksponenten til neste verdi/posisjon
+
+    print(dec_nr) #Printer ut svaret
+
+    gjenta = input('\nGo again? (y/n): ') #Gir mulighet til å kjøre programmet igjen.
+    if gjenta == 'y':
+        bin_dec() #Kjører funksjonen på nytt dersom 'y' er gitt.
+    #elif gjenta == 'n':
+        #valg_func()
+
+bin_dec()
