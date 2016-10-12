@@ -12,7 +12,7 @@ def skriv():
 
 def les():
     # Skal lese fra fil bk1t.txt
-    lese = open('bk1t.txt', 'r')
+    lese = open('SWP1.txt', 'r')
     print(lese.read())
     lese.close()
     print()
