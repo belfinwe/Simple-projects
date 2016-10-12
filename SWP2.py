@@ -56,6 +56,7 @@ def velg():
     print()
 
 def avslutt():
+    print()
     for i in range(1, 10, 1): # Det her er mest for å gjere den fancy!
             if i < 8:
                 print(signOff[:-i])
