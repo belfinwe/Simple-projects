@@ -80,5 +80,5 @@ def velg_fil():
     print()
     velg()
 
-print('Første gang programmet kjører siden oppstart, spesifiser fil! (cf)')
+print('Første gang programmet kjører siden oppstart, spesifiser fil! (o)')
 velg()
