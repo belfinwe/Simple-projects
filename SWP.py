@@ -1,5 +1,5 @@
-# Bruk og kast nr 1
-# Endret fra "bruk og kast" (bK1) til SWP - Simple Write Program
+# Bruk og kast nr 1.
+# Endret fra "bruk og kast" (bK1) til SWP - Simple Write Program.
 
 def skriv():
     # Skal skrive (legge til) tekst til fil
