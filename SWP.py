@@ -29,7 +29,7 @@ def skriv_over():
 
 def velg():
     # Velger hvilken funksjon som skal kjøres
-    x = input('\nw/r/a? ')
+    x = input('w/r/a? ')
     if x == 'w':
         skriv_over()
     elif x == 'r':
