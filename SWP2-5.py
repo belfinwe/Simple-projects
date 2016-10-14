@@ -1,7 +1,7 @@
 # SWP - Simple Write Program v2.5
-# Forfatter:
+# Author:
 # Joakim Rønneberg Nilsen
-# 2016-10-12
+# 2016-10-14
 
 
 # Patch notes:
@@ -60,7 +60,7 @@ def velg(filnavnV):
     elif x == 'o':
         velg_fil()
     elif x == 'q':
-        avslutt(filnavnV)
+        avslutt()
     print()
 
 def velg_fil():
@@ -81,13 +81,13 @@ def avslutt():
                 print('<<signed off!>>')
                     
 
-def les_linje(filnavn_LL):
+def les_linje(filnavnLL):
     # Testing av å lese spesifikke linjer
-    lesL = open(filnavn_LL, 'r')
+    lesL = open(filnavnLL, 'r')
     print(lesL.readline())
     print()
     lesL.close()
-    velg()
+    velg(filnavnLL)
 
 
 #print('Første gang programmet kjører siden oppstart, spesifiser fil! (o)')
