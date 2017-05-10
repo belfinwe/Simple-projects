@@ -1,6 +1,6 @@
 # Matte-program
-# 2017-05-05
-# v1.0
+# 2017-05-09
+# v2.0
 
 from tkinter import *
 import random
