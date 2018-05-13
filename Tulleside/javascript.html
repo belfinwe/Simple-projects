@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Gordana sin side</title>
+<meta charset="utf-8">
+<link rel="stylesheet" type="text/css" href="CSS/tulleside.css">
+</head>
+
+<body>
+<header>
+<h1>Gordana sin side!</h1>
+</header>
+
+<!-- Sånn er kommentarer i HTML. -->
+<!-- Tag'en nav under brukes bare for å indikere at det er den delen av nettsiden som brukes til navigasjon kjære. -->
+<nav>
+<a href="tulleside.html" id="jennaSide">Jenna sin side</a> 
+<a href="multimedia.html" id="videoside">Multimedia</a>
+</nav>
+
+<!-- 
+Tag'en article kan brukes for markere selve hovedinnholdet på nettsiden, som for eksempel artikler.
+Men dette er valgfritt, eg meiner på at han eine foreleseren vår sa at aviser ofte bruker tag'en section istedet, siden det
+passer betre med den sjargongen dei bruker i det daglege.
+ -->
+<article>
+<p id="js_first"></p>
+<p id="js_if"></p>
+<p id="js_var"></p>
+
+
+<a href="https://projecteuler.net/archives/">Matteoppgaver som du kan prøve å programmere.</a>
+
+
+<!-- Som du ser under kjære, så er det en HTML-tag som legger til bildet på sida di :* -->
+<p>Nokre eksempelbilder kjære.</p>
+<img src="bilder/html5.jpg" alt="HTML5, CSS3, JS" id="htmlBilde">
+<img src="http://constructs.stampede-design.com/wp-content/uploads/2017/01/javascriptlogo-2.jpg" alt="W3 test" id="htmlBilde">
+
+<p id="fib"></p>
+<p id="fib2"></p>
+
+<p id="testing"></p>
+
+<!--
+<form>
+<label>Sjekk om tall er primtall</label><input type="text" id="tall">
+<button onclick="sjekkePrimtall()">Sjekk</button>
+</form>
+<p id="primtall"></p>
+-->
+</article>
+
+<!-- 
+Tag'en footer brukes for det som pleier å være nederst på et nettsted/nettside. Her står ofte informasjon om hvordan du
+kan komme i kontakt med de som driver nettstedet, og eventuelt andre lenker. 
+-->
+<footer>
+Laga av Joakim. Für Gordana.
+</footer>
+<script>
+/*
+Kommentar i Javascript.
+*/
+var mein_schatz = "Gordana";
+if(mein_schatz === "Gordana"){
+	document.getElementById('js_first').innerHTML = "Mein Schatz! :D";
+}
+/*document.getElementById('js_if1').innerHTML = "if - else if - else:");*/
+var tall = 10;
+if(tall<5){
+	document.getElementById('js_if').innerHTML = "Mindre enn fem!";
+} else if(tall>5 && tall<10){
+	document.getElementById('js_if').innerHTML = "Større enn fem og mindre ennn ti!";
+} else {
+	document.getElementById('js_if').innerHTML = "Ti eller mer!";
+}
+/* Det er sånn du skriver kommentarer i koden kjære.
+ * Datamaskina vil drite i å kjøre det som er står som en kommentar.
+ * Dersom du vil prøve å fjerne ein del av koden uten å slette det, kan du kommentere det ut, sånn som under:
+ */
+ //var x = 5;
+var test = (mein_schatz === "Gordana") ? "Gordana ist mein Schatz!" : "Joakim er Gordana sin Schatz!";
+document.getElementById('js_var').innerHTML = test;
+
+
+function fib(){
+	/* Skal generere Fibonacci tall-sekvensen */
+	var f1 = 0;
+	var f2 = 1;
+	var tallene = "<strong>Fibonacci-tallene:</strong> " + f1 + ", ";
+	tallene += f2 + ", ";
+
+	while(f2 + f1 < 4000000){
+		var tmp = f1 + f2;
+		f1 = f2;
+		f2 = tmp;
+		tallene += tmp + ", ";
+	}
+	tallene += "og så var det slutt.";
+	return tallene;
+}
+document.getElementById('fib').innerHTML = fib();
+
+function fib2(){
+	/* Skal generere Fibonacci tall-sekvensen */
+	var f1 = 0;
+	var f2 = 1;
+	var tallene = "<strong>Fibonacci-partallene:</strong> " + f1 + ", ";
+	tallene += f2 + ", ";
+
+	while(f2 < 4000000){
+		var tmp = f1 + f2;
+		f1 = f2;
+		f2 = tmp;
+		if(tmp%2 == 0){
+			tallene += tmp + ", ";
+		}
+	}
+	tallene += "og så var det slutt.";
+	return tallene;
+}
+document.getElementById('fib2').innerHTML = fib2();
+
+function erPrimtall(tallet){
+	var i = 2;
+	var svar = true;
+	
+	while(i<tallet-1) {
+		if((tallet % i) === 0) {
+			svar = false;
+		}
+		i++;
+	}
+	return svar;
+}
+/*
+// Funksjonen skal skrive ut summen av primtallene som er lavere enn 20.
+function primtallListe(){
+	var i;
+	var sum = 0;
+	for(i=0; i < 20; i++){
+		if(erPrimtall(i)){
+			sum += i;
+		}
+	}
+	return sum;
+}
+document.getElementById('testing').innerHTML = primtallListe();
+*/
+function sjekkePrimtall(){
+	var tallet = document.getElementById('tall');
+	var svar = erPrimtall(tallet);
+	if(svar){
+		document.getElementById('primtall').innerHTML = tallet + " er et primtall!";
+	} else {
+		document.getElementById('primtall').innerHTML = tallet + " er ikke et primtall!";
+	}
+}
+</script>
+
+</body>
+</html>

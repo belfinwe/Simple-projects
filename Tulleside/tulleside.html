@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Für Jenna</title>
+<link rel="stylesheet" type="text/css" href="CSS/tulleside.css">
+</head>
+
+<body>
+<header>
+<h1>Hallo Jenna!</h1>
+</header>
+<nav>
+<a href="javascript.html">Gordana sin side</a>
+</nav>
+
+
+<p>Trykk på knappen for å lage et regnestykke</p><img id="happy" src="bilder/happy.jpg" alt="happy smiley">
+<button type='button' onclick="getSummere()">Pluss</button>
+<button type='button' onclick="getTrekkeFra()">Minus</button>
+
+<br>
+
+<img id='bilde1' src=''> <img id='operator'> <img id='bilde2' src=''>
+
+<p id="regnestykket"></p>
+Skriv inn svar her:<input type='text' name='svar'><button type='button' onclick="svare()">Svare</button>
+<p id="tilbake">Tester tester...</p>
+
+
+<table>
+	<tr>
+		<th>Tall</th>
+		<th class="asd">Navn</th>
+		<th>Tall</th>
+		<th class="asd">Navn</th>
+	</tr>
+	<tr>
+		<td><img src="bilder/1.jpg"></td>
+		<td>EN<br>EINS</td>
+		<td><img src="bilder/6.jpg"></td>
+		<td>SEKS<br>SECHS</td>
+	</tr>
+	<tr>
+		<td><img src="bilder/2.jpg"></td>
+		<td>TO<br>ZWEI</td>
+		<td><img src="bilder/7.jpg"></td>
+		<td>SJU<br>SIEBEN</td>
+	</tr>
+	<tr>
+		<td><img src="bilder/3.jpg"></td>
+		<td>TRE<br>DREI</td>
+		<td><img src="bilder/8.jpg"></td>
+		<td>ÅTTE<br>ACHT</td>
+	</tr>
+	<tr>
+		<td><img src="bilder/4.jpg"></td>
+		<td>FIRE<br>VIER</td>
+		<td><img src="bilder/9.jpg"></td>
+		<td>NI<br>NEUN</td>
+	</tr>
+	<tr>
+		<td><img src="bilder/5.jpg"></td>
+		<td>FEM<br>FÜNF</td>
+		<td><img src="bilder/10.jpg"></td>
+		<td>TI<br>ZEHN</td>
+	</tr>
+</table>
+
+<footer>
+Laga av Joakim. Für Jenna.
+</footer>
+<script>
+var t1;
+var t2;
+function summere(t1, t2){
+	return t1 + t2;
+}
+function trekkeFra(t1, t2){
+	return t1-t2;
+}
+function generer(){
+	return Math.floor(Math.random() * 6);
+}
+function getSummere(){
+	t1 = generer();
+	t2 = generer();
+
+	switch(t1){
+		case 1 : document.getElementById('bilde1').src='bilder/en.jpg'; break;
+		case 2 : document.getElementById('bilde1').src='bilder/to.jpg'; break;
+		case 3 : document.getElementById('bilde1').src='bilder/tre.jpg'; break;
+		case 4 : document.getElementById('bilde1').src='bilder/fire.jpg'; break;
+		case 5 : document.getElementById('bilde1').src='bilder/fem.jpg'; break;
+		default : document.getElementById('bilde1').src='bilder/null.jpg';
+	}
+	switch(t2){
+		case 1 : document.getElementById('bilde2').src='bilder/en.jpg'; break;
+		case 2 : document.getElementById('bilde2').src='bilder/to.jpg'; break;
+		case 3 : document.getElementById('bilde2').src='bilder/tre.jpg'; break;
+		case 4 : document.getElementById('bilde2').src='bilder/fire.jpg'; break;
+		case 5 : document.getElementById('bilde2').src='bilder/fem.jpg'; break;
+		default : document.getElementById('bilde2').src='bilder/null.jpg';
+	}
+	document.getElementById('operator').src='bilder/pluss.jpg';
+	document.getElementById('regnestykket').innerHTML =  t1 + " + " + t2 + " = " + summere(t1,t2)
+}
+
+function getTrekkeFra(){
+	var t1 = generer();
+	var t2 = generer();
+	switch(t1){
+		case 1 : document.getElementById('bilde1').src='bilder/en.jpg'; break;
+		case 2 : document.getElementById('bilde1').src='bilder/to.jpg'; break;
+		case 3 : document.getElementById('bilde1').src='bilder/tre.jpg'; break;
+		case 4 : document.getElementById('bilde1').src='bilder/fire.jpg'; break;
+		case 5 : document.getElementById('bilde1').src='bilder/fem.jpg'; break;
+		default : document.getElementById('bilde1').src='bilder/null.jpg';
+	}
+	switch(t2){
+		case 1 : document.getElementById('bilde2').src='bilder/en.jpg'; break;
+		case 2 : document.getElementById('bilde2').src='bilder/to.jpg'; break;
+		case 3 : document.getElementById('bilde2').src='bilder/tre.jpg'; break;
+		case 4 : document.getElementById('bilde2').src='bilder/fire.jpg'; break;
+		case 5 : document.getElementById('bilde2').src='bilder/fem.jpg'; break;
+		default : document.getElementById('bilde2').src='bilder/null.jpg';
+	}
+	document.getElementById('operator').src='bilder/minus.jpg';
+	document.getElementById('regnestykket').innerHTML =  t1 + " - " + t2 + " = " + trekkeFra(t1,t2)
+}
+
+function svare(){
+	if(document.getElementById('operator').src=='bilder/minus.jpg'){
+		document.getElementById('tilbake').innerHTML = "Testing";
+		if(t1-t2 == document.getElementByName('svar')){
+			document.getElementById('tilbake').innerHTML = "Rett svar!";
+		} else {
+			document.getElementById('tilbake').innerHTML = "Galt svar!";
+		}
+	}
+}
+</script>
+
+</body>
+</html>
