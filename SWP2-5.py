@@ -9,9 +9,9 @@
 # Noe endring i rekkefølgen på det som presenteres i oppstarten
 
 # Ellers skal funksjonaliteten til programmet være som før
-# Det er fortsatt UTF-8 og Python 3.5 som gjelder 
-   
-    
+# Det er fortsatt UTF-8 og Python 3.5 som gjelder
+
+
 def skriv(filnavnS):
     print()
     # Skal skrive (legge til) tekst til fil
@@ -65,11 +65,11 @@ def velg(filnavnV):
 
 def velg_fil():
     print('Skriv inn filnavn. Finnes ikke filen vil det bli opprettet en ny fil!')
-    war = input('Ønsket filnavn: ') # Not 'war' but 'Write, Append, Read'
-    war += '.txt'
+    filnavn = input('Ønsket filnavn: ') # Not 'war' but 'Write, Append, Read'
+    war = f"{filnavn}.txt"
     print()
     velg(war)
-    
+
 
 def avslutt():
     signOff = 'signing off........'
@@ -79,10 +79,10 @@ def avslutt():
                 print(signOff[:-i])
             elif i == 8 :
                 print('<<signed off!>>')
-                    
+
 
 def les_linje(filnavnLL):
-    # Testing av å lese spesifikke linjer
+    """ Testing av å lese spesifikke linjer """
     lesL = open(filnavnLL, 'r')
     print(lesL.readline())
     print()
